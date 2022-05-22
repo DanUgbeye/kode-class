@@ -12,6 +12,7 @@ import Index from "./pages/dashboard";
 import Courses from "./pages/dashboard/courses";
 import Course from "./pages/dashboard/course";
 import NotFound from "./pages/notFound";
+import "../src/assets/fontawesome/css/all.min.css";
 
 ReactDOM.render(
   <React.StrictMode>
