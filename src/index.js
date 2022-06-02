@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import "../src/assets/fontawesome/css/all.min.css";
 import App from "./App";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/login";
 import DashboardLayout from "./layouts/dashboardLayout";
 import Home from "./pages/home";
@@ -16,7 +16,7 @@ import Signup from "./pages/signup";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
@@ -33,7 +33,7 @@ ReactDOM.render(
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

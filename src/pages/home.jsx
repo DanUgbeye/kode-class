@@ -6,15 +6,15 @@ const Home = () => {
   return (
     <main className=" bg-light-blue-90 min-h-[100vh]  ">
       <header className=" flex justify-between px-4 py-4 items-center ">
-        <h1 className=" text-2xl font-bold text-light-30 px-2 rounded ">{"Kode Class"}</h1>
+        <h1 className=" text-2xl font-bold text-light-30 rounded ">{"Kode Class"}</h1>
 
-        <div className=" flex gap-4 w-fit mr-12 ">
-          <Link to={"/signup"} className={" h-8 grid place-items-center border-2 border-solid hover:border-light-green-60 px-2 text-light-green-30 border-light-green-30  tracking-wider rounded-md "}>
-            Signup
+        <div className=" flex gap-2 w-fit lg:mr-12 ">
+          <Link to={"/signup"} className={"text-sm h-8 grid place-items-center border-2 border-solid hover:border-light-green-60 px-2 text-light-30 border-light-green-30 tracking-wider rounded-sm "}>
+            SIGNUP
           </Link>
 
-          <Link to={"/login"} className={" h-8 grid place-items-center hover:text-light-green-60 hover:underline hover:underline-offset-4 px-2 text-light-green-30 border-light-green-30 tracking-wider rounded-md "}>
-            Login
+          <Link to={"/login"} className={"text-sm  h-8 grid place-items-center hover:text-light-30/80 hover:underline hover:underline-offset-4 px-2 text-light-30 border-light-green-30 tracking-wider rounded-md "}>
+            LOGIN
           </Link>
         </div>
       </header>

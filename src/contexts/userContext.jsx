@@ -4,7 +4,7 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signInWithPopup,
+  signInWithRedirect,
   GoogleAuthProvider,
   signOut,
   updateProfile 
@@ -37,7 +37,7 @@ const UserContextProvider = ({ children }) => {
   };
 
   const loginWithGoogle = () => {
-    return signInWithPopup(auth, provider);
+    return signInWithRedirect(auth, provider);
   };
 
   const updateUserProfile = (user, data) => {

@@ -19,4 +19,4 @@ class Settings {
         return process.env.REACT_APP_AUTH_DOMAIN;
     }
 }
-module.exports = Settings;
+export default Settings;
