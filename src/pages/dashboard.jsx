@@ -25,12 +25,12 @@ const Dashboard = () => {
         <div className=" absolute left-[50%] translate-x-[-50%] top-[30%] translate-y-[-50%] flex flex-col md:flex-row gap-4 w-[90%] max-w-2xl rounded-xl min-h-[15rem] max-h-[20rem] p-8 bg-gradient-to-r from-light-green-30 via-light-green-30 to-light-green-60 text-light-blue-90 font-bold ">
           <div className="w-full gap-2 flex flex-col ">
             <div className=" text-4xl ">
-              <span className=" mr-2 ">Welcome </span>
+              <span className=" mr-2 ">Welcome</span>
               <span className="  ">{currentUser.displayName} </span>
             </div>
             <div className="  text-sm font-normal ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-              magni tenetur officia eius, odit doloremque?
+              Continue where you left off, make sure you smash your learning goals today.
+              Kode class is here to make sure you do.
             </div>
             <Link
               to="/courses"

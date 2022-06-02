@@ -5,7 +5,7 @@ import { useUser } from "../contexts/userContext";
 import { useNavigate, Link } from "react-router-dom";
 
 const Signup = () => {
-    const [name, setName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -20,18 +20,18 @@ const Signup = () => {
     setError("");
     setLoading(true);
     signup(email, password)
-    .then((userdetails) => {
-      updateUserProfile(userdetails.user, {
+      .then((userdetails) => {
+        updateUserProfile(userdetails.user, {
           displayName: name,
-      }).then().catch((err) => setError(err.message))
-      setLoading(false);
-      navigate("/dashboard");
-    })
-    .catch((err) => {
-      setError(err.message);        
-      setLoading(false);
-    });
-
+        })
+          .then(() => navigate("/dashboard"))
+          .catch((err) => setError(err.message));
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -42,23 +42,29 @@ const Signup = () => {
 
   return (
     <main className=" relative w-full bg-light-30 min-h-[100vh] px-8 pt-4 ">
-      
       <div className=" -ml-4 mb-4 lg:ml-8 max-w-[9rem] flex justfy-end ">
-        <button  className="text-sm text-light-blue-90 max-w-fit items-center flex " 
-          onClick={(e)=>(navigate("/"))}
+        <button
+          className="text-sm text-light-blue-90 max-w-fit items-center flex "
+          onClick={(e) => navigate("/")}
         >
-          <i className=" fa far fa-angles-left mr-2 "></i>  
+          <i className=" fa far fa-angles-left mr-2 "></i>
           <span className=" ">Back to home</span>
         </button>
       </div>
 
       <div className=" flex lg:grid lg:grid-cols-[1fr_1.5fr] ">
         <div className=" hidden lg:grid w-full max-w-[25rem] aspect-square text-light-green-30 rounded-full place-items-center h-full ">
-          <div className="  ">
-            <span className=" text-7xl text-bold block mb-4">Kode Class</span>
-            <span className=" text-xl text-light-blue-90 ">
-              Redefining the future of learning
-            </span>
+          <div className="">
+            <div className=" py-4 px-6  mb-8 rounded-md bg-gradient-to-br from-light-green-30 via-light-green-30 via-light-blue-30 to-light-blue-60 w-fit text-8xl text-light-30/60 font-semibold mx-auto ">
+              K
+            </div>
+
+            <div className="  ">
+              <span className=" text-7xl text-bold block mb-4">Kode Class</span>
+              <span className=" text-xl text-light-blue-90 ">
+                Redefining the future of learning
+              </span>
+            </div>
           </div>
         </div>
 
@@ -66,20 +72,18 @@ const Signup = () => {
           <Heading
             heading={"Signup"}
             supportText={"create a kode class account"}
-            extraStyle={"mb-6"}
-            headingStyle={"font-light text-7xl text-center"}
+            extraStyle={"mb-5"}
+            headingStyle={"font-light text-6xl text-center"}
             supportTextStyle={"text-center text-light-green-30"}
           />
 
-
-          <form
-            className=" w-full "
-            onSubmit={(e) => handleSignup(e)}
-            >
+          <form className=" w-full " onSubmit={(e) => handleSignup(e)}>
             {error && (
-              <div className=" text-sm text-red-500 border-red-500 border my-4 p-2 ">{error}</div>
+              <div className=" text-sm text-red-500 border-red-500 border my-4 p-2 ">
+                {error}
+              </div>
             )}
-              <fieldset className=" relative mb-8 flex items-center ">
+            <fieldset className=" relative mb-8 flex items-center ">
               <input
                 type="text"
                 name="name"
@@ -150,19 +154,23 @@ const Signup = () => {
           <div className=" text-light-blue-90 text-sm mx-8 flex justify-end mt-4 ">
             Already have an account ?{" "}
             <span className=" ml-2">
-              <Link to="/login" className=" text-light-green-30 hover:underline ">
+              <Link
+                to="/login"
+                className=" text-light-green-30 hover:underline "
+              >
                 Login
               </Link>
             </span>
           </div>
 
-          <div className=" text-light-green-30 flex justify-center items-center my-4 ">
+          <div className=" text-light-green-30 flex justify-center items-center my-8 ">
             <div className=" max-w-[10rem] w-full h-[1px] bg-light-green-30 inline-block mx-3 "></div>
             OR
             <div className=" max-w-[10rem] w-full h-[1px] bg-light-green-30 inline-block mx-3 "></div>
           </div>
 
-          <button className=" relative px-4 h-16 rounded-md border-2 border-light-blue-90 max-w-md justify-center mx-auto flex gap-4 items-center text-light-blue-90 "
+          <button
+            className=" relative px-4 h-16 rounded-md border-2 border-light-blue-90 max-w-md justify-center mx-auto flex gap-4 items-center text-light-blue-90 "
             onClick={() => loginWithGoogle()}
           >
             <img className=" w-12 h-8  " src={googleSVG} alt="google" />
@@ -170,7 +178,6 @@ const Signup = () => {
           </button>
         </section>
       </div>
-
     </main>
   );
 };

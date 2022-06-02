@@ -8,7 +8,7 @@ const DashboardLayout = () => {
 
   return (
     <section className=" bg-light-30 relative  ">
-      <div className=" z-[1002] text-light-blue-90 sticky top-0 left-0 right-0 items-center flex border-b border-light-blue-90 w-full sm:hidden h-14  ">
+      <div className=" z-[1002] text-light-blue-90 bg-light-30 sticky top-0 left-0 right-0 items-center flex border-b border-light-blue-90 w-full sm:hidden h-14  ">
         <Link
           to="/"
           className={" text-xl font-bold text-primary-red-60 my-8 w-fit ml-6  "}

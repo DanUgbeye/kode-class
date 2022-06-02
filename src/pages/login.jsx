@@ -51,6 +51,10 @@ const Login = () => {
       <div className=" flex lg:grid lg:grid-cols-[1fr_1.5fr] ">
         <div className=" hidden lg:grid w-full max-w-[25rem] aspect-square text-light-green-30 rounded-full place-items-center h-full ">
           <div className="">
+            <div className=" py-4 px-6  mb-8 rounded-md bg-gradient-to-br from-light-green-30 via-light-green-30 via-light-blue-30 to-light-blue-60 w-fit text-8xl text-light-30/60 font-semibold mx-auto ">
+              K
+            </div>
+
             <div className="  ">
               <span className=" text-7xl text-bold block mb-4">Kode Class</span>
               <span className=" text-xl text-light-blue-90 ">
@@ -64,15 +68,12 @@ const Login = () => {
           <Heading
             heading={"Login"}
             supportText={"sign in to access your kode class account"}
-            extraStyle={"mb-6"}
-            headingStyle={"font-light text-7xl text-center"}
+            extraStyle={"mb-5"}
+            headingStyle={"font-light text-6xl text-center"}
             supportTextStyle={"text-center text-light-green-30"}
           />
 
-          <form
-            className=" w-full"
-            onSubmit={(e) => handleLogin(e)}
-          >
+          <form className=" w-full" onSubmit={(e) => handleLogin(e)}>
             {error && (
               <div className=" text-sm text-red-500 border-red-500 border my-4 p-2 ">
                 {error}
@@ -133,13 +134,16 @@ const Login = () => {
           <div className=" text-light-blue-90 text-sm mx-8 flex justify-end mt-4 ">
             Don't have an account ?{" "}
             <span className=" ml-2">
-              <Link to="/signup" className=" text-light-green-30 hover:underline ">
+              <Link
+                to="/signup"
+                className=" text-light-green-30 hover:underline "
+              >
                 Sign up
               </Link>
             </span>
           </div>
 
-          <div className=" text-light-green-30 flex justify-center items-center my-4 ">
+          <div className=" text-light-green-30 flex justify-center items-center my-8 ">
             <div className=" max-w-[10rem] w-full h-[1px] bg-light-green-30 inline-block mx-3 "></div>
             OR
             <div className=" max-w-[10rem] w-full h-[1px] bg-light-green-30 inline-block mx-3 "></div>
