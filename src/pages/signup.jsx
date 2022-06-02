@@ -68,7 +68,7 @@ const Signup = () => {
           </div>
         </div>
 
-        <section className=" z-[1000] text-light-blue-90 w-full max-w-sm mb-4 mx-auto h-fit mx-8 min-w-0 self-center ">
+        <section className=" z-[1000] text-light-blue-90 w-full max-w-sm mb-4 mx-auto h-fit mt-8 min-w-0 self-center ">
           <Heading
             heading={"Signup"}
             supportText={"create a kode class account"}

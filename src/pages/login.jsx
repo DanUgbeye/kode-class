@@ -64,7 +64,7 @@ const Login = () => {
           </div>
         </div>
 
-        <section className=" z-[1000] text-light-blue-90 w-full max-w-sm mx-auto mb-4 h-fit mx-8 min-w-0 self-center ">
+        <section className=" z-[1000] text-light-blue-90 w-full max-w-sm mx-auto mb-4 h-fit mt-8 min-w-0 self-center ">
           <Heading
             heading={"Login"}
             supportText={"sign in to access your kode class account"}
