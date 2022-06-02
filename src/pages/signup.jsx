@@ -4,7 +4,8 @@ import googleSVG from "../assets/svg/google-original.svg";
 import { useUser } from "../contexts/userContext";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Signup = () => {
+    const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -12,21 +13,25 @@ const Login = () => {
   const [pwHidden, setPwHidden] = useState(true);
   const navigate = useNavigate();
 
-  const { login, user, loginWithGoogle } = useUser();
+  const { signup, user, loginWithGoogle, updateUserProfile } = useUser();
 
-  const handleLogin = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     setError("");
     setLoading(true);
-    login(email, password)
-      .then((userdetails) => {
-        setLoading(false);
-        navigate("/dashboard");
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
+    signup(email, password)
+    .then((userdetails) => {
+      updateUserProfile(userdetails.user, {
+          displayName: name,
+      }).then().catch((err) => setError(err.message))
+      setLoading(false);
+      navigate("/dashboard");
+    })
+    .catch((err) => {
+      setError(err.message);        
+      setLoading(false);
+    });
+
   };
 
   useEffect(() => {
@@ -49,22 +54,37 @@ const Login = () => {
 
       <section className=" z-[1000] text-light-blue-90 w-full h-fit mx-8 min-w-0 self-center ">
         <Heading
-          heading={"Login"}
-          supportText={"sign in to access your kode class account"}
+          heading={"Signup"}
+          supportText={"create a kode class account"}
           extraStyle={""}
           headingStyle={"font-light text-7xl text-center"}
           supportTextStyle={"text-center text-light-green-30"}
         />
 
+
         <form
           className=" w-full max-w-sm mx-auto "
-          onSubmit={(e) => handleLogin(e)}
-        >
+          onSubmit={(e) => handleSignup(e)}
+          >
           {error && (
-            <div className=" text-sm text-red-500 border-red-500 border my-4 p-2 ">
-              {error}
-            </div>
+            <div className=" text-sm text-red-500 border-red-500 border my-4 p-2 ">{error}</div>
           )}
+            <fieldset className=" relative mb-8 flex items-center ">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              required={true}
+              className=" w-full bg-light-30/90 p-2 pl-12 outline-none h-12 overflow-hidden border-b border-light-blue-90  "
+              placeholder="full name"
+            />
+            <i className="fa-user fas absolute text-lg left-4 top-[50%] translate-y-[-50%] pointer-events-none " />
+          </fieldset>
+
           <fieldset className=" relative mb-8 flex items-center ">
             <input
               type="email"
@@ -112,7 +132,7 @@ const Login = () => {
             {loading ? (
               <i className="fa fat fa-spinner-third fa-2x fa-spin text-light-30 "></i>
             ) : (
-              "Login"
+              "Signup"
             )}
           </button>
         </form>
@@ -123,16 +143,15 @@ const Login = () => {
           <div className=" max-w-[10rem] w-full h-[1px] bg-light-green-30 inline-block mx-3 "></div>
         </div>
 
-        <button
-          className=" relative px-4 h-16 rounded-md border-2 border-light-blue-90 max-w-md justify-center mx-auto flex gap-4 items-center text-light-blue-90 "
+        <button className=" relative px-4 h-16 rounded-md border-2 border-light-blue-90 max-w-md justify-center mx-auto flex gap-4 items-center text-light-blue-90 "
           onClick={() => loginWithGoogle()}
         >
           <img className=" w-12 h-8  " src={googleSVG} alt="google" />
-          Sign in with Google
+          Sign up with Google
         </button>
       </section>
     </main>
   );
 };
 
-export default Login;
+export default Signup;

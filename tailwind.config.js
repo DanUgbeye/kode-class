@@ -10,6 +10,8 @@ module.exports = {
         "light-green-30" : "#8CC34A",
         "light-green-60" : "#5F8D3B",
         "light-green-90" : "#416128",
+        "light-30" : "#e5e4e5",
+        "bg-10" : "#353435"
       }
     },
   },

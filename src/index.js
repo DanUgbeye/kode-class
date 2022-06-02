@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "../src/assets/fontawesome/css/all.min.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/login";
-import Dashboard from "./pages/dashboard/dashboard";
+import DashboardLayout from "./layouts/dashboardLayout";
 import Home from "./pages/home";
-import Profile from "./pages/dashboard/profile";
-import Index from "./pages/dashboard";
-import Courses from "./pages/dashboard/courses";
-import Course from "./pages/dashboard/course";
+import Profile from "./pages/profile";
+import Dashboard from "./pages/dashboard";
+import Courses from "./pages/courses";
+import Course from "./pages/course";
 import NotFound from "./pages/notFound";
-import "../src/assets/fontawesome/css/all.min.css";
+import Signup from "./pages/signup";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,11 +21,14 @@ ReactDOM.render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
-          <Route path="dashboard" element={<Dashboard />}>
-            <Route index element={<Index />} />
+          <Route path="signup" element={<Signup />} />
+          <Route element={<DashboardLayout />}>
+            <Route path="dashboard" element={<Dashboard />} />
             <Route path="profile" element={<Profile />} />
-            <Route path="courses" element={<Courses />} />
-            <Route path="course/:id" element={<Course />} />
+            <Route path="courses"  >
+              <Route index element={<Courses />} />
+              <Route path=":id" element={<Course />} />
+            </Route>
           </Route>
           <Route path="*" element={<NotFound />} />
         </Route>
@@ -35,7 +38,3 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
