@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/kode-class/static/css/main.73f22002.css",
+    "main.js": "/kode-class/static/js/main.ebb41d0b.js",
+    "static/media/fa-duotone-900.ttf": "/kode-class/static/media/fa-duotone-900.0f2e11ce9677158aeab0.ttf",
+    "static/media/fa-thin-100.ttf": "/kode-class/static/media/fa-thin-100.68dbc01fde3867384907.ttf",
+    "static/media/fa-light-300.ttf": "/kode-class/static/media/fa-light-300.b31c42cb8a96d9cc5b75.ttf",
+    "static/media/fa-regular-400.ttf": "/kode-class/static/media/fa-regular-400.5cf8499133f49b8ba64d.ttf",
+    "static/media/fa-solid-900.ttf": "/kode-class/static/media/fa-solid-900.de5a87d7f4dca2264b90.ttf",
+    "static/media/fa-thin-100.woff2": "/kode-class/static/media/fa-thin-100.c9b3736ae7cced9fc9c6.woff2",
+    "static/media/fa-duotone-900.woff2": "/kode-class/static/media/fa-duotone-900.48d50780884a54e06195.woff2",
+    "static/media/fa-light-300.woff2": "/kode-class/static/media/fa-light-300.c5fb0953e1eba1000d87.woff2",
+    "static/media/fa-regular-400.woff2": "/kode-class/static/media/fa-regular-400.7914efbd267219eb5193.woff2",
+    "static/media/fa-solid-900.woff2": "/kode-class/static/media/fa-solid-900.0b983aed44ba64c5da4d.woff2",
+    "static/media/fa-brands-400.ttf": "/kode-class/static/media/fa-brands-400.3139198fd214a3ac6d46.ttf",
+    "static/media/fa-brands-400.woff2": "/kode-class/static/media/fa-brands-400.2609c565b2064f577886.woff2",
+    "static/media/fa-v4compatibility.ttf": "/kode-class/static/media/fa-v4compatibility.cd0fdf1f864652991c5e.ttf",
+    "static/media/fa-v4compatibility.woff2": "/kode-class/static/media/fa-v4compatibility.f2ff997b674f095c0aa2.woff2",
+    "static/media/google-original.svg": "/kode-class/static/media/google-original.80f0af23341f6c7f83475b942e8f9216.svg",
+    "index.html": "/kode-class/index.html",
+    "main.73f22002.css.map": "/kode-class/static/css/main.73f22002.css.map",
+    "main.ebb41d0b.js.map": "/kode-class/static/js/main.ebb41d0b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.73f22002.css",
+    "static/js/main.ebb41d0b.js"
+  ]
+}
