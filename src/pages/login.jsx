@@ -34,7 +34,7 @@ const Login = () => {
       navigate("/dashboard");
     }
     return () => {};
-  }, []);
+  }, [user]);
 
   return (
     <main className=" relative w-full bg-light-30 min-h-[100vh] px-8 pt-4 ">

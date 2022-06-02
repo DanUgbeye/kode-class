@@ -38,8 +38,7 @@ const Signup = () => {
     if (user && Object.keys(user).length > 0) {
       navigate("/dashboard");
     }
-    return () => {};
-  }, []);
+  }, [user]);
 
   return (
     <main className=" relative w-full bg-light-30 min-h-[100vh] px-8 pt-4 ">
